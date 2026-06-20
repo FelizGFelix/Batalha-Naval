@@ -30,8 +30,11 @@ def main_game(suas_cordenadas, cordenadas_adversario):
     cordenadas_chute = 0, ""
     cordenadas_geradas = 0, ""
 
+    numeros_chutados = []
+
     while cordenadas_chute != cordenadas_adversario or cordenadas_geradas != suas_cordenadas:
 
+        print(f"Cordenadas chutadas: {numeros_chutados}")
         cordenadas_letra = input("Digite a cordenada da letra: ")
 
         if cordenadas_letra not in letras_permitidas:
@@ -54,6 +57,7 @@ def main_game(suas_cordenadas, cordenadas_adversario):
         else:
             print("Errado!")
             print("Tente novamente!")
+            numeros_chutados.append(cordenadas_chute)
 
         letra_bot = random.choice(letras_permitidas)
         numero_bot = random.randrange(1, 11)
